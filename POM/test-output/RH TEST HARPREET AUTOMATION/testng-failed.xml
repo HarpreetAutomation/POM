@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [RH TEST HARPREET AUTOMATION]">
+  <listeners>
+    <listener class-name="com.rh.qa.ExtentReportListener.ExtentReporterNG"/>
+  </listeners>
+  <test name="POM CASES(failed)">
+    <classes>
+      <class name="com.rh.qa.test.ExperiencePageTestJava">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="validateExperienceDetails"/>
+          <include name="validateContactDetails"/>
+        </methods>
+      </class> <!-- com.rh.qa.test.ExperiencePageTestJava -->
+      <class name="com.rh.qa.test.ContactPageTestJava">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.rh.qa.test.ContactPageTestJava -->
+    </classes>
+  </test> <!-- POM CASES(failed) -->
+</suite> <!-- Failed suite [RH TEST HARPREET AUTOMATION] -->

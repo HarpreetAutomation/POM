@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">	
+
+<suite name="RH TEST HARPREET AUTOMATION">
+<listeners>
+      <listener
+          class-name="com.rh.qa.ExtentReportListener.ExtentReporterNG"/>
+</listeners>
+         
+  <test name="POM CASES">
+	 <classes>
+	   <class name="com.rh.qa.test.ContactPageTestJava"></class>
+	   <class name="com.rh.qa.test.ExperiencePageTestJava"></class>
+	   <class name="com.rh.qa.test.EducationPageTestJava"></class>
+	   <class name="com.rh.qa.test.SkillPageTestJava"></class>
+	   <class name="com.rh.qa.test.SummaryPageTestJava"></class>
+	  </classes>
+   </test>
+</suite>
