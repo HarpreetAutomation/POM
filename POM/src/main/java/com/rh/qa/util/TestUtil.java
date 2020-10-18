@@ -18,10 +18,11 @@ import com.rh.qa.base.TestBase;
 
 public class TestUtil extends TestBase{
 	 public static long PAGE_LOAD_TIMEOUT = 30;
-	 public static long IMPLICIT_WAIT = 10;
+	 public static long IMPLICIT_WAIT = 5;
 	 	 
-	 public static String TESTDATA_SHEET_PATH = "C://bold-noida-workspace//POM"
-			 +"//src//main//Java//com//rh//qa//testdata//ContactPomFinal.xlsx";
+	 public static String TESTDATA_SHEET_PATH = "C://Users//harpreet.bhatia//git//POM//POM//src//main//java//com//rh//qa//testdata//ContactPomFinal.xlsx";
+	 
+	 
 		 
 	 static Workbook book;
      static Sheet sheet;

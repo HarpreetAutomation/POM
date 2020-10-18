@@ -3,14 +3,18 @@ package com.rh.qa.test;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import com.rh.qa.ExtentReportListener.TestAllureReportListener;
 import com.rh.qa.base.TestBase;
 import com.rh.qa.pages.Dashboard;
 import com.rh.qa.pages.HIWPage;
 import com.rh.qa.pages.LandingPage;
 import com.rh.qa.pages.LoginPage;
-
+@Listeners(
+		{TestAllureReportListener.class}
+	)
 public class LandingPageTestJava extends TestBase 
 	
 	{
@@ -21,7 +25,7 @@ public class LandingPageTestJava extends TestBase
 			super();
     }
 		@BeforeMethod
-		public void setUp()
+		public void setUp() throws InterruptedException
 		{
 			initialization();
 			Lpage = new LandingPage();
@@ -37,7 +41,7 @@ public class LandingPageTestJava extends TestBase
 		{
 			String title = Lpage.validateLandingPageTitle();
 			System.out.println(title);
-			Assert.assertEquals(title, "Resume Help: Instantly Create Your Resume Online");
+			Assert.assertEquals(title, "Reshume Help: Instantly Create Your Resume Online");
 		}
 @AfterMethod
 	public void tearDown()

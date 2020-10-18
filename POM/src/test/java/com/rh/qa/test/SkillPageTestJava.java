@@ -67,7 +67,7 @@ public class SkillPageTestJava extends TestBase {
 		
 	}
 	
-	@Test(priority=1)
+	@Test(priority=1, groups="Tips")
 	public void verifySkillTipsHeader()
 	{
 		skill.backClick();
@@ -77,7 +77,7 @@ public class SkillPageTestJava extends TestBase {
 		skilltips.nextClick();
 	}
 	
-	@Test(priority=2)
+	@Test(priority=2, groups="Title")
 	public void validateSkillDescriptionPageTitle() throws InterruptedException
 	{
 	Thread.sleep(7000);
@@ -86,7 +86,7 @@ public class SkillPageTestJava extends TestBase {
 	Assert.assertEquals(title, "Skill Description | ResumeHelp");
 	}
 	
-	@Test( priority=3, dataProvider="getRHTestData", groups="TextValue")
+	@Test( priority=3, groups="AddExamples")
 	public void validateSkillPageDetails() throws InterruptedException
 	{
 		skill.skillDescClick();

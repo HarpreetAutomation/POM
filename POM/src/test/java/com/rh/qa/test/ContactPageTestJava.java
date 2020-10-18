@@ -13,6 +13,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
 import org.testng.AssertJUnit;
 import static org.testng.Assert.assertTrue;
 
@@ -21,6 +22,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import com.rh.qa.ExtentReportListener.TestAllureReportListener;
 import com.rh.qa.base.TestBase;
 import com.rh.qa.pages.ChooseTemplate;
 import com.rh.qa.pages.Contact;
@@ -33,7 +35,7 @@ import com.rh.qa.util.ExcelUtil;
 import com.rh.qa.util.TestUtil;
 import com.rh.qa.excellib.util.*;
 
-
+@Listeners({TestAllureReportListener.class})
 public class ContactPageTestJava extends TestBase {
 	
 	LandingPage lp;
@@ -69,7 +71,7 @@ public class ContactPageTestJava extends TestBase {
 			cnct = UP.cnct();
 	}
 		
-		@Test(priority=1, groups="Title")
+		@Test(priority=1, groups="Title", enabled=true)
 		public void validateContactPageTitleTest() throws InterruptedException
 		{
 		Thread.sleep(7000);
@@ -85,7 +87,7 @@ public class ContactPageTestJava extends TestBase {
 			return data;
 		}
 		
-		@Test( priority=2, dataProvider="getRHTestData", groups="TextValue", dependsOnMethods="validateContactPageTitleTest")
+		@Test( priority=2, dataProvider="getRHTestData", groups="TextValue")
 		public void validateContactDetails(String name, String address, String city, String state, String zipcode)
 		{
 			cnct.ContactDetails(name, address, city, state, zipcode);

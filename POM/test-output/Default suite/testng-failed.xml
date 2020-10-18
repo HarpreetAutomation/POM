@@ -3,15 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.rh.qa.test.EducationPageTestJava">
+      <class name="com.rh.qa.test.LandingPageTestJava">
         <methods>
-          <include name="verifyEductionTipsHeader"/>
-          <include name="validateEducationPageTitle"/>
-          <include name="validateEducationPageDetails"/>
-          <include name="tearDown"/>
           <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="landingPageTitleTest"/>
         </methods>
-      </class> <!-- com.rh.qa.test.EducationPageTestJava -->
+      </class> <!-- com.rh.qa.test.LandingPageTestJava -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

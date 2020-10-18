@@ -1,25 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [RH TEST HARPREET AUTOMATION]">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [RH TEST HARPREET AUTOMATION]">
   <listeners>
     <listener class-name="com.rh.qa.ExtentReportListener.ExtentReporterNG"/>
   </listeners>
-  <test name="POM CASES(failed)">
+  <test thread-count="5" name="POM CASES(failed)">
     <classes>
       <class name="com.rh.qa.test.ExperiencePageTestJava">
         <methods>
+          <include name="validateExperiencePageTitle"/>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="validateExperienceDetails"/>
-          <include name="validateContactDetails"/>
         </methods>
       </class> <!-- com.rh.qa.test.ExperiencePageTestJava -->
-      <class name="com.rh.qa.test.ContactPageTestJava">
+      <class name="com.rh.qa.test.SkillPageTestJava">
         <methods>
-          <include name="setUp"/>
           <include name="tearDown"/>
+          <include name="validateSkillPageDetails"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- com.rh.qa.test.ContactPageTestJava -->
+      </class> <!-- com.rh.qa.test.SkillPageTestJava -->
+      <class name="com.rh.qa.test.EducationPageTestJava">
+        <methods>
+          <include name="verifyEductionTipsHeader"/>
+          <include name="validateEducationPageDetails"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.rh.qa.test.EducationPageTestJava -->
+      <class name="com.rh.qa.test.SummaryPageTestJava">
+        <methods>
+          <include name="validateSummaryPageDetails"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="verifySummaryTipsHeader"/>
+        </methods>
+      </class> <!-- com.rh.qa.test.SummaryPageTestJava -->
     </classes>
   </test> <!-- POM CASES(failed) -->
 </suite> <!-- Failed suite [RH TEST HARPREET AUTOMATION] -->

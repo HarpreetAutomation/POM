@@ -29,7 +29,12 @@ public class LoginPageTestJava extends TestBase
 			@BeforeMethod
 		public void setUp()
 		{
-			initialization();
+			try {
+				initialization();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			LandingPage landingpage = new LandingPage();
 			loginpage=landingpage.LandingClick();
 			//LoginPage loginpage = new LoginPage();

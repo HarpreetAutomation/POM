@@ -40,9 +40,9 @@ public class EducationTips extends TestBase{
 		return eductipheader.isDisplayed();
 	}
 
-	public boolean verifySecondTip() {
-		return educsecondtip.isDisplayed();
-	}
+	//public boolean verifySecondTip() {
+		//return educsecondtip.isDisplayed();
+	//}
 
 	public boolean verifyThirdTip() {
 		return educthirdtip.isDisplayed();

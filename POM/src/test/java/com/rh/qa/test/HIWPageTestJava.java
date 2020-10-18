@@ -18,7 +18,7 @@ public class HIWPageTestJava extends TestBase
 		super();
 }
 	@BeforeMethod
-	public void setUp()
+	public void setUp() throws InterruptedException
 	{
 		initialization();
 		LandingPage lp = new LandingPage();

@@ -4,7 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.rh.qa.base.TestBase;
 
@@ -82,9 +84,12 @@ public class Experience extends TestBase{
 			expCity.sendKeys(add);
 			expJobtitle.sendKeys(city);
 			expStartMonth.click();
-			Thread.sleep(2000);
+			WebDriverWait wait = new WebDriverWait(driver,10);
+			wait.until(ExpectedConditions.elementToBeClickable(expStartMonth));
+			//Thread.sleep(2000);
 			expStartMonthVal.click();
-			Thread.sleep(2000);
+			WebDriverWait wait1 = new WebDriverWait(driver,10);
+			wait1.until(ExpectedConditions.elementToBeClickable(expStartMonthVal));
 			
 			expstartyear.click();
 			Thread.sleep(2000);

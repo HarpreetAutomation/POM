@@ -62,18 +62,18 @@ public class EducationPageTestJava extends TestBase {
 		educform = educationtips.verifyNextButton();
 	}
 	
-	@Test(priority=1)
+	@Test(priority=1, groups="Tips")
 	public void verifyEductionTipsHeader()
 	{
 		educform.verifyBackCTA();
 		Assert.assertTrue(educationtips.verifyHeader(), "Header is missing on the page");
-		Assert.assertTrue(educationtips.verifySecondTip(), "Second Tip is not correct on the page");
+		
 		Assert.assertTrue(educationtips.verifyThirdTip(), "Third Tip is not correct on the page");
 		Assert.assertTrue(educationtips.verifyFourthTip(), "Fourth Tip is not correct on the page");
 		educationtips.verifyNextButton();
 	}
 	
-	@Test(priority=2)
+	@Test(priority=2,groups="Title")
 	public void validateEducationPageTitle() throws InterruptedException
 	{
 	Thread.sleep(7000);

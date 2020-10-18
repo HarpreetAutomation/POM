@@ -7,6 +7,8 @@ import org.testng.annotations.DataProvider;
 import org.testng.AssertJUnit;
 import static org.testng.Assert.assertTrue;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.NoSuchElementException;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -58,17 +60,17 @@ public class ExperiencePageTestJava extends TestBase {
 			exprtips = cnct.cnct();
 			Thread.sleep(2000);
 			exprform = exprtips.ExpTipsNext();
-			Thread.sleep(2000);
+			
 	}
 	
-	@Test(priority=1, invocationCount=1, expectedExceptions=InterruptedException.class)
+	@Test(priority=1, invocationCount=1,groups="Title", expectedExceptions=InterruptedException.class)
 		public void validateExperiencePageTitle() throws InterruptedException
 		{
 		Thread.sleep(7000);
 		String title = exprform.validateExperiencePageTitle();
 		System.out.println(title);
 		Assert.assertEquals(title, "Experience | ResumeHelp");
-		Assert.assertEquals(title, "Experieence | ResumeHelp", "Title is not matched.");
+		//Assert.assertEquals(title, "Experience | ResumeHelp", "Title is not matched.");
 		}
 	
 		@DataProvider
@@ -78,7 +80,7 @@ public class ExperiencePageTestJava extends TestBase {
 			return data;
 		}
 
-     	@Test(priority=2, dependsOnMethods="validateExperiencePageTitle", dataProvider="getRHTestData", groups="TextValue")
+     	@Test(priority=2,  dataProvider="getRHTestData", groups="TextValue")
 	    public void validateExperienceDetails(String emp, String address, String city) throws InterruptedException
 	    {
 		ExperienceDescription expDesc = exprform.ExperienceFormDetails(emp, address, city);

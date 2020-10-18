@@ -3,8 +3,8 @@
 
 <suite name="RH TEST HARPREET AUTOMATION">
 <listeners>
-      <listener
-          class-name="com.rh.qa.ExtentReportListener.ExtentReporterNG"/>
+      <listener class-name="com.rh.qa.ExtentReportListener.ExtentReporterNG"/>
+      <listener class-name="com.rh.qa.ExtentReportListener.TestAllureReportListener.java"/>
 </listeners>
          
   <test name="POM CASES">
@@ -17,3 +17,5 @@
 	  </classes>
    </test>
 </suite>
+
+</Grouping> 

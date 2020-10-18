@@ -92,7 +92,7 @@ public class SummaryPageTestJava extends TestBase {
 		Assert.assertTrue(educationtips.verifyFourthTip(), "Header is missing on the page");
 	}*/
 	
-	@Test(priority=1)
+	@Test(priority=1, groups="Title")
 	public void validateSummaryDescriptionPageTitle() throws InterruptedException
 	{
 	Thread.sleep(7000);
@@ -102,8 +102,8 @@ public class SummaryPageTestJava extends TestBase {
 	}
 	
 	
-	@Test(priority=2)
-	public void verifySkillTipsHeader()
+	@Test(priority=2, groups="Tips")
+	public void verifySummaryTipsHeader()
 	{
 		summary.backClick();
 		Assert.assertTrue(summarytips.verifyHeader(), "Header is missing on the page");
@@ -112,7 +112,7 @@ public class SummaryPageTestJava extends TestBase {
 		skilltips.nextClick();
 	}
 	
-	@Test( priority=3, dataProvider="getRHTestData", groups="TextValue")
+	@Test( priority=3, groups="AddExamples")
 	public void validateSummaryPageDetails() throws InterruptedException
 	{
 		summary.summDescClick();
