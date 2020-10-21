@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="11219" started-at="2020-10-18T11:49:32Z" finished-at="2020-10-18T11:49:43Z">
+  <suite name="Default suite" duration-ms="15532" started-at="2020-10-19T09:52:38Z" finished-at="2020-10-19T09:52:53Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="11219" started-at="2020-10-18T11:49:32Z" finished-at="2020-10-18T11:49:43Z">
+    <test name="Default test" duration-ms="15532" started-at="2020-10-19T09:52:38Z" finished-at="2020-10-19T09:52:53Z">
       <class name="com.rh.qa.test.LandingPageTestJava">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.rh.qa.test.LandingPageTestJava@f627d13]" name="setUp" is-config="true" duration-ms="9638" started-at="2020-10-18T11:49:32Z" finished-at="2020-10-18T11:49:41Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.rh.qa.test.LandingPageTestJava@5bfa9431]" name="setUp" is-config="true" duration-ms="11381" started-at="2020-10-19T09:52:38Z" finished-at="2020-10-19T09:52:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="landingPageTitleTest()[pri:1, instance:com.rh.qa.test.LandingPageTestJava@f627d13]" name="landingPageTitleTest" duration-ms="123" started-at="2020-10-18T11:49:42Z" finished-at="2020-10-18T11:49:42Z">
+        <test-method status="FAIL" signature="landingPageTitleTest()[pri:1, instance:com.rh.qa.test.LandingPageTestJava@5bfa9431]" name="landingPageTitleTest" duration-ms="2385" started-at="2020-10-19T09:52:49Z" finished-at="2020-10-19T09:52:52Z">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [Reshume Help: Instantly Create Your Resume Online] but found [Resume Help: Instantly Create Your Resume Online]]]>
@@ -56,7 +56,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- landingPageTitleTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.rh.qa.test.LandingPageTestJava@f627d13]" name="tearDown" is-config="true" duration-ms="658" started-at="2020-10-18T11:49:42Z" finished-at="2020-10-18T11:49:43Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.rh.qa.test.LandingPageTestJava@5bfa9431]" name="tearDown" is-config="true" duration-ms="816" started-at="2020-10-19T09:52:53Z" finished-at="2020-10-19T09:52:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

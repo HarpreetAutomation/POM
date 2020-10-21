@@ -15,6 +15,9 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.testng.ITestResult;
+import org.testng.Reporter;
+import org.testng.annotations.AfterMethod;
 
 import com.rh.qa.util.TestUtil;
 import com.rh.qa.util.WebEventListener;
@@ -27,15 +30,15 @@ public class TestBase
 	public static EventFiringWebDriver e_driver;
 	public static WebEventListener eventListener;
 	public static ThreadLocal<WebDriver> tdriver = new ThreadLocal<WebDriver>();
+
+	static String filePath = "C:\\Users\\harpreet.bhatia\\git\\POM\\POM\\Screenshot\\";
 		
 	public TestBase()
-	
 	{
 		try
 		{
 			prop = new Properties();
 			FileInputStream ip = new FileInputStream("C://Users//harpreet.bhatia//git//POM//POM//src//main//java//com//rh//qa//config//config.properties");
-			
 			prop.load(ip);
 		}
 		catch(FileNotFoundException e)
@@ -48,10 +51,9 @@ public class TestBase
 		}
 	}
 	
-			public static WebDriver initialization() throws InterruptedException
-			{
-				
-				String browserName = prop.getProperty("browser");
+	public static WebDriver initialization() throws InterruptedException
+	{
+		String browserName = prop.getProperty("browser");
 				if(browserName.equals("chrome"))
 				{
 					System.setProperty("webdriver.chrome.driver","C://Users//harpreet.bhatia//Desktop//RH_NEW_AUTOMATION//chromedriver//chromedriver.exe");
@@ -63,13 +65,6 @@ public class TestBase
 				//driver = new FirefoxDriver();
 				//}
 			
-
-					
-			/*	e_driver = new EventFiringWebDriver(driver);
-			eventListener =  new WebEventListener();
-			e_driver.register(eventListener);
-			driver = e_driver; */
-						 
 		    driver.manage().window().maximize();
 			driver.manage().deleteAllCookies();
 			driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
@@ -79,26 +74,33 @@ public class TestBase
 			tdriver.set(driver);
 			return getDriver();
 			//return driver;
-		
-		
-	        }
-		public static synchronized WebDriver getDriver(){
+			
+	 }
+		public static synchronized WebDriver getDriver()
+		{
 			return tdriver.get();
 		}
 		
-		public String getScreenshot() {
-			File src = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
-			String path = System.getProperty("user.dir") + "/screenshots/" + System.currentTimeMillis() + ".png";
-			System.out.println("Screenshot taken at");
-			File destination = new File(path);
-			try {
-				FileUtils.copyFile(src, destination);
-			} catch (IOException e) {
-				System.out.println("Capture Failed " + e.getMessage());
-			}
-			return path;
-		}
-	  }
+	public static void takeScreenshot(ITestResult results) throws IOException
+		{
+	    	 File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+	         //The below method will save the screen shot in d drive with test method name 
+	            try 
+	            {
+					FileUtils.copyFile(scrFile, new File(filePath + results.getName() + ".png"));
+					System.out.println("***Placed screen shot in "+filePath+" ***");
+				} catch (IOException e) 
+	            {
+					e.printStackTrace();
+				}
+	    }
+	}
+		
+			
+			
+			
+		
+	  
 		
 	
 	

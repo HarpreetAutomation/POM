@@ -34,11 +34,6 @@ public class UploadPageTestJava extends TestBase
 		Choose = hiwpage.HIWclick();
 		Thread.sleep(2000);
 		UP = Choose.CT();	
-		
-		
-		
-		
-	     
 	}
 	
 	@Test(priority=1)

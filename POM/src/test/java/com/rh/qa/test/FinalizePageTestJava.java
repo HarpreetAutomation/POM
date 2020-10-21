@@ -33,13 +33,8 @@ public class FinalizePageTestJava extends TestBase {
 		dashboard = loginpage.Login(prop.getProperty("username"), prop.getProperty("password"));
 		finalpage = dashboard.clickonEditResume();
 		contact = finalpage.selectContactSection();
-		
 	}
-	
-	
-	
-	
-	
+		
 	@AfterMethod
 	public void tearDown()
 		{

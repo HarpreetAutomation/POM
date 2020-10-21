@@ -29,22 +29,17 @@ public class LandingPageTestJava extends TestBase
 		{
 			initialization();
 			Lpage = new LandingPage();
-	    	//	LandingPage Lpage = new LandingPage();
-			//HIWPage hiwpage = new HIWPage();
-			//hiwpage =	landingpage.Landing();
-			//LoginPage loginpage = new LoginPage();
-			//Dashboard dashboard= new Dashboard();
-		}
+	    }
 		
 		@Test(priority=1)
 		public void landingPageTitleTest()
 		{
 			String title = Lpage.validateLandingPageTitle();
 			System.out.println(title);
-			Assert.assertEquals(title, "Reshume Help: Instantly Create Your Resume Online");
+			Assert.assertEquals(title, "Resume Help: Instantly Create Your Resume Online");
 		}
-@AfterMethod
-	public void tearDown()
+		@AfterMethod
+		public void tearDown()
 		{
 			driver.quit();
 		}
